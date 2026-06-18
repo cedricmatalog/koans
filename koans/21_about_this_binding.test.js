@@ -27,10 +27,10 @@ describe('about this binding', () => {
   });
 
   test('call borrows a function for another object', () => {
-    function describe() {
+    function badge() {
       return `${this.name} (${this.role})`;
     }
-    expect(describe.call({ name: 'Ada', role: 'admin' })).toBe(__);
+    expect(badge.call({ name: 'Ada', role: 'admin' })).toBe(__);
   });
 
   test('apply passes its arguments as an array', () => {

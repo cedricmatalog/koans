@@ -8,11 +8,3 @@
 //
 // ...which is the answer you seek.
 export const __ = Symbol('fill me in');
-
-// Some koans need more than one blank on the same line. Use these the same way.
-export const ___ = Symbol('fill me in');
-export const ____ = Symbol('fill me in');
-
-// A few koans ask you to supply a value of a particular shape. `FILL_ME_IN` is a
-// friendlier alias for `__` when a literal blank reads oddly.
-export const FILL_ME_IN = __;

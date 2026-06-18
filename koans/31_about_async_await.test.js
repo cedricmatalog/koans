@@ -39,9 +39,7 @@ describe('about async/await', () => {
   });
 
   test('load several orders in parallel', async () => {
-    const totals = await Promise.all(
-      [db.findOrder(1), db.findOrder(2)].map(async (p) => (await p).total),
-    );
-    expect(totals).toEqual(__);
+    const orders = await Promise.all([db.findOrder(1), db.findOrder(2)]);
+    expect(orders.map((o) => o.total)).toEqual(__);
   });
 });

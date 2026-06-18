@@ -50,7 +50,7 @@ describe('about classes', () => {
       this.ratePercent = ratePercent;
     }
 
-    describe() {
+    summary() {
       return `${this.owner} earns ${this.ratePercent}%`;
     }
   }
@@ -59,7 +59,7 @@ describe('about classes', () => {
     const s = new SavingsAccount('Ada', 5);
     s.deposit(200);
     expect(s.balance).toBe(__);
-    expect(s.describe()).toBe(__);
+    expect(s.summary()).toBe(__);
     expect(s instanceof Account).toBe(__);
   });
 });

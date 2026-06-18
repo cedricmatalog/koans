@@ -8,11 +8,11 @@ describe('about dates', () => {
   test('read the parts of a date created from an ISO string', () => {
     const placedAt = new Date('2024-06-18T00:00:00Z');
     expect(placedAt.getUTCFullYear()).toBe(__);
-    expect(placedAt.getUTCMonth()).toBe(__); // beware: months are zero-based!
+    expect(placedAt.getUTCMonth()).toBe(__);
     expect(placedAt.getUTCDate()).toBe(__);
   });
 
-  test('months count from zero', () => {
+  test('months are zero-based — January is 0, not 1', () => {
     const january = new Date(Date.UTC(2024, 0, 15));
     expect(january.getUTCMonth()).toBe(__);
   });
@@ -48,6 +48,6 @@ describe('about dates', () => {
 
   test('serialize a date to ISO for an API request', () => {
     const d = new Date('2024-06-18T12:30:00Z');
-    expect(d.toISOString()).toBe(__);
+    expect(d.toISOString()).toBe(__); // toISOString always includes milliseconds: .000Z
   });
 });

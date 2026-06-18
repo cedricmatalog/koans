@@ -39,4 +39,12 @@ describe('about higher-order functions', () => {
     const tenPercentOff = discountBy(10);
     expect(tenPercentOff(2000)).toBe(__);
   });
+
+  test('transform an object by mapping over its entries and rebuilding it', () => {
+    const prices = { mouse: 2000, keyboard: 5000 };
+    const doubled = Object.fromEntries(
+      Object.entries(prices).map(([name, cents]) => [name, cents * 2]),
+    );
+    expect(doubled).toEqual(__);
+  });
 });

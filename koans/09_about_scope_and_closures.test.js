@@ -24,7 +24,7 @@ describe('about scope and closures', () => {
     for (var i = 0; i < 3; i++) {
       handlers.push(() => i);
     }
-    // every handler closed over the SAME i, which ended at 3
+    // every handler closed over the SAME i — not the value it had during each iteration
     expect(handlers.map((fn) => fn())).toEqual(__);
   });
 

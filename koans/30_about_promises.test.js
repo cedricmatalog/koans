@@ -47,7 +47,8 @@ describe('about promises', () => {
       Promise.resolve('ok'),
       Promise.reject(new Error('boom')),
     ]);
-    expect(results[0]).toEqual(__); // a { status, value } record
+    expect(results[0].status).toBe(__);
+    expect(results[0].value).toBe(__);
     expect(results[1].status).toBe(__);
     expect(results[1].reason.message).toBe(__);
   });
