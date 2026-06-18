@@ -1,0 +1,65 @@
+import { describe, expect, test } from 'vitest';
+import { __ } from './helpers/koan.js';
+
+describe('about classes', () => {
+  class Account {
+    #balance = 0;
+
+    constructor(owner) {
+      this.owner = owner;
+    }
+
+    deposit(amount) {
+      this.#balance += amount;
+      return this; // allow chaining
+    }
+
+    get balance() {
+      return this.#balance;
+    }
+
+    static currency() {
+      return 'USD';
+    }
+  }
+
+  test('open a new account', () => {
+    const acct = new Account('Ada');
+    expect(acct.owner).toBe(__);
+    expect(acct.balance).toBe(__);
+  });
+
+  test('deposits update the balance and can be chained', () => {
+    const acct = new Account('Ada');
+    acct.deposit(100).deposit(50);
+    expect(acct.balance).toBe(__);
+  });
+
+  test('static helpers belong to the class itself', () => {
+    expect(Account.currency()).toBe(__);
+  });
+
+  test('private fields cannot be reached from outside', () => {
+    const acct = new Account('Ada');
+    expect(acct['#balance']).toBe(__); // there is no such public key
+  });
+
+  class SavingsAccount extends Account {
+    constructor(owner, ratePercent) {
+      super(owner);
+      this.ratePercent = ratePercent;
+    }
+
+    describe() {
+      return `${this.owner} earns ${this.ratePercent}%`;
+    }
+  }
+
+  test('a subclass extends the base class', () => {
+    const s = new SavingsAccount('Ada', 5);
+    s.deposit(200);
+    expect(s.balance).toBe(__);
+    expect(s.describe()).toBe(__);
+    expect(s instanceof Account).toBe(__);
+  });
+});

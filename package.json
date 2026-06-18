@@ -1,0 +1,17 @@
+{
+  "name": "javascript-koans",
+  "version": "1.0.0",
+  "description": "Learn JavaScript by walking the path to enlightenment, one failing test at a time.",
+  "type": "module",
+  "scripts": {
+    "meditate": "vitest",
+    "walk": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.0",
+    "vitest": "^2.1.0"
+  }
+}
