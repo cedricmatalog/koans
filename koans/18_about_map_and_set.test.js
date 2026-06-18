@@ -4,7 +4,7 @@ import { __ } from './helpers/koan.js';
 // Map keys values by identity; Set holds unique values. These koans cache and
 // evict entries, use objects as keys, dedupe lists, and test membership.
 
-describe('about Map', () => {
+describe('about Map and Set', () => {
   test('a cache of users looked up by id', () => {
     const cache = new Map();
     cache.set(1, 'Ada');
@@ -27,9 +27,7 @@ describe('about Map', () => {
     cache.delete('token');
     expect(cache.has('token')).toBe(__);
   });
-});
 
-describe('about Set', () => {
   test('collect the unique tags on a post', () => {
     const tags = new Set(['js', 'web', 'js', 'node', 'web']);
     expect(tags.size).toBe(__);
