@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Functions price orders and carry behavior. These koans cover default
+// parameters, rest arguments, missing arguments, and passing functions as values.
+
 describe('about functions', () => {
   function priceWithTax(price, rate = 0.1) {
     return price + price * rate;

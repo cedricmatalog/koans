@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Classes bundle data and behavior. These koans cover fields, getters and
+// setters, private #fields, static members, and inheritance.
+
 describe('about classes', () => {
   class Account {
     #balance = 0;

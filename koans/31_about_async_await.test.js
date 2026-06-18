@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// async/await reads asynchronous code top to bottom. These koans unwrap
+// promises, sequence and parallelize them, and catch rejections with try/catch.
+
 describe('about async/await', () => {
   const db = {
     findUser: (id) => Promise.resolve({ id, name: 'Ada', orderIds: [1, 2] }),

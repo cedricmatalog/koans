@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Regular expressions match patterns in text. These koans validate emails and
+// zips, capture date parts, find all matches, mask digits, and split messy input.
+
 describe('about regular expressions', () => {
   test('check whether an email looks valid', () => {
     const looksLikeEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;

@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// JSON is how data travels over the wire. These koans serialize, parse,
+// deep-clone via a round trip (and meet its limits), and pretty-print.
+
 describe('about JSON', () => {
   test('serialize a request body', () => {
     expect(JSON.stringify({ name: 'Ada', age: 30 })).toBe(__);

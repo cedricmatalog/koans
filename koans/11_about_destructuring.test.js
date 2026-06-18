@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Destructuring unpacks objects and arrays in one step. These koans pull fields
+// from an API response, rename them, default them, nest them, and unpack params.
+
 describe('about destructuring', () => {
   const response = {
     status: 200,

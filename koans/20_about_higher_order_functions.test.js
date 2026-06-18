@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Higher-order functions take or return other functions. These koans cover
+// map, filter, reduce, some/every, and functions that build other functions.
+
 describe('about higher-order functions', () => {
   const cart = [
     { name: 'Mouse', price: 2000, qty: 2 },

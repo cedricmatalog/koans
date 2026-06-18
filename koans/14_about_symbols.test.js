@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// A Symbol is a unique, collision-proof value. These koans use them as hidden
+// metadata keys, share them through the global registry, and make objects iterable.
+
 describe('about symbols', () => {
   test('two generated session ids are never equal', () => {
     const a = Symbol('session');

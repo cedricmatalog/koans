@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Spread copies things apart; rest gathers them together. These koans merge
+// settings, clone carts without mutating, and collect arguments.
+
 describe('about spread and rest', () => {
   test('merge default settings with user overrides', () => {
     const defaults = { theme: 'light', fontSize: 14, notifications: true };

@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Template literals interpolate values, span multiple lines, and power tag
+// functions. These koans render greetings, URLs, and cart line items.
+
 describe('about template literals', () => {
   test('render a personalized greeting', () => {
     const name = 'Ada';

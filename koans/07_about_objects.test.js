@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Users, products, and settings are objects. These koans read, update, inspect,
+// and freeze them without losing the original.
+
 describe('about objects', () => {
   const user = {
     id: 7,

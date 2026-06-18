@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// A shopping cart is an array. These koans add, remove, search, and reorder its
+// items — and show which methods mutate the original vs. return a fresh copy.
+
 describe('about arrays', () => {
   const cart = ['Mouse', 'Keyboard', 'Monitor'];
 

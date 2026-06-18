@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Objects delegate to a prototype for properties they don't have themselves.
+// These koans walk the chain from delegation to where it ends at null.
+
 describe('about prototypes', () => {
   test('objects delegate to a shared prototype', () => {
     const base = {

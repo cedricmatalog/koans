@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Map keys values by identity; Set holds unique values. These koans cache and
+// evict entries, use objects as keys, dedupe lists, and test membership.
+
 describe('about Map', () => {
   test('a cache of users looked up by id', () => {
     const cache = new Map();

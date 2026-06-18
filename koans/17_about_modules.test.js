@@ -6,6 +6,9 @@ import { __ } from './helpers/koan.js';
 // See ./17_money.module.js for what is being exported.
 import receipt, { CURRENCY, formatPrice, applyDiscount as discount } from './17_money.module.js';
 
+// Modules share code through exports. These koans cover named vs. default
+// imports, aliasing with `as`, and dynamic import().
+
 describe('about modules', () => {
   test('named exports keep their names', () => {
     expect(CURRENCY).toBe(__);

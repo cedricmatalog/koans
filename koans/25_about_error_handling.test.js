@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Things go wrong: bad input, declined payments, downed connections. These
+// koans throw, catch, run finally, and define custom error classes.
+
 describe('about error handling', () => {
   test('catch a validation error', () => {
     function validateEmail(email) {

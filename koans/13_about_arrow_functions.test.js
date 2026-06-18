@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Arrow functions are short and borrow `this` from their surroundings.
+// These koans map prices, return object literals, and chain filter into map.
+
 describe('about arrow functions', () => {
   const prices = [10, 20, 30];
 

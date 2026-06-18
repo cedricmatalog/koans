@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Generators produce values lazily, one yield at a time. These koans make id
+// sequences, finite ranges, infinite streams, and delegate with yield*.
+
 describe('about generators', () => {
   test('generate sequential order ids on demand', () => {
     function* orderIds() {

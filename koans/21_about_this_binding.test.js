@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// `this` depends on how a function is called, not where it is defined. These
+// koans detach methods and re-bind them with bind, call, and apply.
+
 describe('about this binding', () => {
   const cart = {
     items: ['Mouse', 'Keyboard'],

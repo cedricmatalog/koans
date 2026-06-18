@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// A callback is a function you hand off to run later. These koans transform
+// records, observe async ordering, and follow the error-first convention.
+
 describe('about callbacks', () => {
   test('a callback transforms each record', () => {
     function mapUsers(users, fn) {

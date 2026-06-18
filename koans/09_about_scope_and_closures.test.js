@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Scope decides what a variable can see; a closure remembers it afterward.
+// These koans build counters, private state, and a memoized cache.
+
 describe('about scope and closures', () => {
   test('block scope keeps a variable local', () => {
     let message = 'outer';

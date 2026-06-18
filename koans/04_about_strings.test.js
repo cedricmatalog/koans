@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// Strings show up everywhere in a store: names, emails, slugs, card numbers.
+// These koans measure, slice, split, and reshape them.
+
 describe('about strings', () => {
   test('an email has a length', () => {
     expect('ada@example.com'.length).toBe(__);

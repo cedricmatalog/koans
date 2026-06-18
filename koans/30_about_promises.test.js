@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import { __ } from './helpers/koan.js';
 
+// A promise is a value that arrives later. These koans await it, chain
+// then/catch, and combine many with all, race, allSettled, and any.
+
 describe('about promises', () => {
   const fetchUser = (id) => Promise.resolve({ id, name: 'Ada' });
   const fetchOrders = () => Promise.resolve(['ORD-1', 'ORD-2']);
