@@ -57,9 +57,9 @@ expected 4 to be Symbol(fill me in)
 
 That is the answer you seek. Change `__` to `4` and move on.
 
-Some koans don't use `__` — they have a deliberately wrong expectation, or an
-empty function body for you to implement. The failing message always tells you
-what's expected.
+Most blanks want a single literal value, but some expect an expression or a
+whole structure — `toEqual(__)` wants the entire array or object, not just one
+piece of it. The failing message always tells you what's expected.
 
 ## The path
 

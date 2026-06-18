@@ -34,6 +34,11 @@ describe('about arrays', () => {
     expect(cart.indexOf('Monitor')).toBe(__);
   });
 
+  test('find the first product matching a condition', () => {
+    expect(cart.find((item) => item.length > 6)).toBe(__);
+    expect(cart.findIndex((item) => item.length > 6)).toBe(__);
+  });
+
   test('take the first two items for a preview', () => {
     expect(cart.slice(0, 2)).toEqual(__);
   });
@@ -46,5 +51,23 @@ describe('about arrays', () => {
 
   test('show a wishlist sorted alphabetically', () => {
     expect(['Monitor', 'Cable', 'Mouse'].sort()).toEqual(__);
+  });
+
+  test('the classic trap: default sort compares numbers as strings', () => {
+    expect([1, 2, 10].sort()).toEqual(__); // NOT [1, 2, 10] — "10" sorts before "2"
+    expect([1, 2, 10].sort((a, b) => a - b)).toEqual(__); // a comparator fixes it
+  });
+
+  test('some methods mutate the original, some return a copy', () => {
+    const prices = [3, 1, 2];
+    const copy = prices.slice().sort((a, b) => a - b);
+    expect(copy).toEqual(__);
+    expect(prices).toEqual(__); // slice() protected the original from sort
+    prices.sort((a, b) => a - b);
+    expect(prices).toEqual(__); // sort mutates in place — the original changed
+  });
+
+  test('reach the last item without computing length - 1', () => {
+    expect(cart.at(-1)).toBe(__);
   });
 });

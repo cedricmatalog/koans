@@ -5,7 +5,7 @@ describe('about this binding', () => {
   const cart = {
     items: ['Mouse', 'Keyboard'],
     count() {
-      return this?.items?.length;
+      return this.items.length;
     },
   };
 
@@ -15,7 +15,13 @@ describe('about this binding', () => {
 
   test('a method pulled off its object loses `this`', () => {
     const detached = cart.count;
-    expect(detached()).toBe(__); // no object, so this is undefined
+    let threw = false;
+    try {
+      detached(); // no object, so `this` is undefined and this.items throws
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(__);
   });
 
   test('bind locks `this` to a chosen object', () => {

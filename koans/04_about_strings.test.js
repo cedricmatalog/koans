@@ -38,6 +38,15 @@ describe('about strings', () => {
     expect('4111111111111234'.slice(-4)).toBe(__);
   });
 
+  test('zero-pad an order number to five digits', () => {
+    expect('42'.padStart(5, '0')).toBe(__);
+  });
+
+  test('length counts code units, not visible characters', () => {
+    expect('😀'.length).toBe(__); // one emoji, but a surrogate pair — not 1
+    expect([...'😀'].length).toBe(__); // spreading iterates by code point
+  });
+
   test('turn a title into a URL slug', () => {
     expect('Hello World Post'.toLowerCase().replaceAll(' ', '-')).toBe(__);
   });

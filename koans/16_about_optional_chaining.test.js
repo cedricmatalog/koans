@@ -36,4 +36,12 @@ describe('about optional chaining and nullish coalescing', () => {
     expect(0 || 20).toBe(__);
     expect(0 ?? 20).toBe(__);
   });
+
+  test('??= assigns only when the current value is null or undefined', () => {
+    const settings = { pageSize: 0 };
+    settings.pageSize ??= 20; // 0 is a real value, so it stays
+    settings.theme ??= 'light'; // missing, so it gets filled in
+    expect(settings.pageSize).toBe(__);
+    expect(settings.theme).toBe(__);
+  });
 });

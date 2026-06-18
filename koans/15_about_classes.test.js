@@ -18,6 +18,10 @@ describe('about classes', () => {
       return this.#balance;
     }
 
+    set balance(amount) {
+      if (amount >= 0) this.#balance = amount; // a setter can reject bad input
+    }
+
     static currency() {
       return 'USD';
     }
@@ -42,6 +46,14 @@ describe('about classes', () => {
   test('private fields cannot be reached from outside', () => {
     const acct = new Account('Ada');
     expect(acct['#balance']).toBe(__); // there is no such public key
+  });
+
+  test('a setter looks like a plain assignment but runs code', () => {
+    const acct = new Account('Ada');
+    acct.balance = 500; // calls the setter, not a public field write
+    expect(acct.balance).toBe(__);
+    acct.balance = -100; // rejected by the setter's guard
+    expect(acct.balance).toBe(__);
   });
 
   class SavingsAccount extends Account {

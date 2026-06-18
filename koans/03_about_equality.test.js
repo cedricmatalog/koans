@@ -38,4 +38,11 @@ describe('about equality', () => {
     const configuredPageSize = undefined;
     expect(configuredPageSize || 20).toBe(__);
   });
+
+  test('=== gets two cases "wrong"; Object.is fixes them', () => {
+    expect(NaN === NaN).toBe(__); // a value not even equal to itself
+    expect(Object.is(NaN, NaN)).toBe(__);
+    expect(-0 === 0).toBe(__);
+    expect(Object.is(-0, 0)).toBe(__); // Object.is can tell -0 from 0
+  });
 });
