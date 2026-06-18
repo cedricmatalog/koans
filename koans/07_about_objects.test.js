@@ -20,7 +20,7 @@ describe('about objects', () => {
   test('update a profile without mutating the original', () => {
     const updated = { ...user, verified: true };
     expect(updated.verified).toBe(__);
-    expect(user.verified).toBe(__); // original is untouched
+    expect(user.verified).toBe(__); // the spread built a new object — did it touch this one?
   });
 
   test('list the keys and values of a settings object', () => {

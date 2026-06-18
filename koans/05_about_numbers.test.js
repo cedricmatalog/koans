@@ -34,6 +34,6 @@ describe('about numbers', () => {
   });
 
   test('this is exactly why we avoid floats for money', () => {
-    expect(0.1 + 0.2 === 0.3).toBe(__); // false: 0.1 + 0.2 is 0.30000000000000004
+    expect(0.1 + 0.2 === 0.3).toBe(__); // base-2 floats can't store 0.1, 0.2, or 0.3 exactly
   });
 });

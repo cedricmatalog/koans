@@ -17,7 +17,7 @@ describe('about this binding', () => {
     const detached = cart.count;
     let threw = false;
     try {
-      detached(); // no object, so `this` is undefined and this.items throws
+      detached(); // called with no receiver, so `this` is undefined here
     } catch {
       threw = true;
     }

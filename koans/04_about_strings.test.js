@@ -43,7 +43,7 @@ describe('about strings', () => {
   });
 
   test('length counts code units, not visible characters', () => {
-    expect('😀'.length).toBe(__); // one emoji, but a surrogate pair — not 1
+    expect('😀'.length).toBe(__); // 😀 is stored as a surrogate pair of code units
     expect([...'😀'].length).toBe(__); // spreading iterates by code point
   });
 

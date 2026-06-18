@@ -45,14 +45,14 @@ describe('about classes', () => {
 
   test('private fields cannot be reached from outside', () => {
     const acct = new Account('Ada');
-    expect(acct['#balance']).toBe(__); // there is no such public key
+    expect(acct['#balance']).toBe(__); // #balance is private; bracket access looks for a public property
   });
 
   test('a setter looks like a plain assignment but runs code', () => {
     const acct = new Account('Ada');
     acct.balance = 500; // calls the setter, not a public field write
     expect(acct.balance).toBe(__);
-    acct.balance = -100; // rejected by the setter's guard
+    acct.balance = -100; // this assignment runs the setter's amount >= 0 guard
     expect(acct.balance).toBe(__);
   });
 

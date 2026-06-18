@@ -18,7 +18,7 @@ describe('about JSON', () => {
     const copy = JSON.parse(JSON.stringify(original));
     expect(copy).toEqual(__);
     expect(copy === original).toBe(__);
-    expect(copy.ui === original.ui).toBe(__); // even nested objects are new
+    expect(copy.ui === original.ui).toBe(__); // did the round trip copy the nested object too?
   });
 
   test('undefined values and functions are dropped', () => {

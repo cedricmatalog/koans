@@ -10,12 +10,12 @@ describe('about Map', () => {
     expect(cache.size).toBe(__);
   });
 
-  test('any value can be a key, including objects', () => {
+  test('an object key is matched by identity, not by its contents', () => {
     const views = new Map();
     const product = { id: 1 };
     views.set(product, 5);
     expect(views.get(product)).toBe(__);
-    expect(views.get({ id: 1 })).toBe(__); // a different object, even if it looks the same
+    expect(views.get({ id: 1 })).toBe(__);
   });
 
   test('check and evict a cached entry', () => {

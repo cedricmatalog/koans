@@ -54,7 +54,7 @@ describe('about arrays', () => {
   });
 
   test('the classic trap: default sort compares numbers as strings', () => {
-    expect([1, 2, 10].sort()).toEqual(__); // NOT [1, 2, 10] — "10" sorts before "2"
+    expect([1, 2, 10].sort()).toEqual(__); // default sort converts each element to a string first
     expect([1, 2, 10].sort((a, b) => a - b)).toEqual(__); // a comparator fixes it
   });
 
@@ -62,9 +62,9 @@ describe('about arrays', () => {
     const prices = [3, 1, 2];
     const copy = prices.slice().sort((a, b) => a - b);
     expect(copy).toEqual(__);
-    expect(prices).toEqual(__); // slice() protected the original from sort
+    expect(prices).toEqual(__); // which array did sort() actually run on?
     prices.sort((a, b) => a - b);
-    expect(prices).toEqual(__); // sort mutates in place — the original changed
+    expect(prices).toEqual(__); // sort() reorders in place the array it's called on
   });
 
   test('reach the last item without computing length - 1', () => {

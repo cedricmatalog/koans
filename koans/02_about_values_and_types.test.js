@@ -36,10 +36,10 @@ describe('about values and types', () => {
     expect(typeof product).toBe(__);
   });
 
-  test('a price that could not be parsed becomes NaN', () => {
+  test('an unparseable price becomes NaN, which is not even equal to itself', () => {
     const price = Number('not a price');
     expect(Number.isNaN(price)).toBe(__);
-    expect(price === price).toBe(__); // NaN is not equal to itself
+    expect(price === price).toBe(__);
   });
 
   test('"missing" and "explicitly empty" compare loosely but not strictly', () => {

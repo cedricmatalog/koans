@@ -40,9 +40,9 @@ describe('about equality', () => {
   });
 
   test('=== gets two cases "wrong"; Object.is fixes them', () => {
-    expect(NaN === NaN).toBe(__); // a value not even equal to itself
+    expect(NaN === NaN).toBe(__); // does NaN equal anything, even itself?
     expect(Object.is(NaN, NaN)).toBe(__);
     expect(-0 === 0).toBe(__);
-    expect(Object.is(-0, 0)).toBe(__); // Object.is can tell -0 from 0
+    expect(Object.is(-0, 0)).toBe(__); // does Object.is treat -0 and 0 as the same value?
   });
 });

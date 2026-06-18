@@ -48,6 +48,6 @@ describe('about dates', () => {
 
   test('serialize a date to ISO for an API request', () => {
     const d = new Date('2024-06-18T12:30:00Z');
-    expect(d.toISOString()).toBe(__); // toISOString always includes milliseconds: .000Z
+    expect(d.toISOString()).toBe(__); // toISOString normalizes to UTC with millisecond precision
   });
 });

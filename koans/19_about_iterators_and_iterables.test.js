@@ -18,11 +18,11 @@ describe('about iterators and iterables', () => {
     expect([...'ABC']).toEqual(__);
   });
 
-  test('drive an iterator by hand', () => {
+  test('drive an iterator by hand — it reports done once the values run out', () => {
     const it = ['Ada', 'Grace'][Symbol.iterator]();
     expect(it.next()).toEqual(__);
     expect(it.next()).toEqual(__);
-    expect(it.next()).toEqual(__); // past the end
+    expect(it.next()).toEqual(__);
   });
 
   test('build a custom paginator that yields page numbers', () => {
