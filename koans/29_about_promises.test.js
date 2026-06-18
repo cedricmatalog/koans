@@ -41,4 +41,22 @@ describe('about promises', () => {
     const fromDb = new Promise((resolve) => setTimeout(() => resolve('database'), 50));
     expect(await Promise.race([fromCache, fromDb])).toBe(__);
   });
+
+  test('allSettled reports every outcome instead of failing fast', async () => {
+    const results = await Promise.allSettled([
+      Promise.resolve('ok'),
+      Promise.reject(new Error('boom')),
+    ]);
+    expect(results[0]).toEqual(__); // a { status, value } record
+    expect(results[1].status).toBe(__);
+    expect(results[1].reason.message).toBe(__);
+  });
+
+  test('any resolves with the first success, ignoring earlier failures', async () => {
+    const winner = await Promise.any([
+      Promise.reject(new Error('cache miss')),
+      Promise.resolve('from database'),
+    ]);
+    expect(winner).toBe(__);
+  });
 });

@@ -35,6 +35,26 @@ describe('about objects', () => {
     expect('language' in settings).toBe(__);
   });
 
+  test('entries pairs each key with its value', () => {
+    expect(Object.entries({ a: 1, b: 2 })).toEqual(__);
+  });
+
+  test('fromEntries rebuilds an object from [key, value] pairs', () => {
+    const pairs = [
+      ['theme', 'dark'],
+      ['fontSize', 14],
+    ];
+    expect(Object.fromEntries(pairs)).toEqual(__);
+  });
+
+  test('transform an object by round-tripping through entries', () => {
+    const prices = { mouse: 2000, keyboard: 5000 };
+    const doubled = Object.fromEntries(
+      Object.entries(prices).map(([name, cents]) => [name, cents * 2]),
+    );
+    expect(doubled).toEqual(__);
+  });
+
   test('two users with identical data are still different objects', () => {
     const a = { id: 1 };
     const b = { id: 1 };

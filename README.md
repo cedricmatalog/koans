@@ -72,8 +72,9 @@ The koans build on each other, from fundamentals to async:
 3. **Collections & iteration** — Map/Set, iterators & iterables
 4. **Functional & advanced** — higher-order functions, `this`, prototypes,
    generators, Proxy
-5. **Errors & data** — error handling, JSON, regular expressions
-6. **Async** — callbacks, promises, async/await, the event loop
+5. **Errors & data** — error handling, JSON, regular expressions, dates
+6. **Async** — callbacks, promises (incl. `allSettled`/`any`), async/await, the
+   event loop
 
 ## A note on answers
 

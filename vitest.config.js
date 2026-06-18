@@ -41,6 +41,7 @@ export default defineConfig({
       'koans/29_about_promises.test.js',
       'koans/30_about_async_await.test.js',
       'koans/31_about_event_loop.test.js',
+      'koans/32_about_dates.test.js',
     ],
     bail: 1,
     fileParallelism: false,

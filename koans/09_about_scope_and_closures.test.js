@@ -11,6 +11,23 @@ describe('about scope and closures', () => {
     expect(message).toBe(__);
   });
 
+  test('let gives each loop iteration its own binding', () => {
+    const handlers = [];
+    for (let i = 0; i < 3; i++) {
+      handlers.push(() => i);
+    }
+    expect(handlers.map((fn) => fn())).toEqual(__);
+  });
+
+  test('var is shared across iterations — the classic closure bug', () => {
+    const handlers = [];
+    for (var i = 0; i < 3; i++) {
+      handlers.push(() => i);
+    }
+    // every handler closed over the SAME i, which ended at 3
+    expect(handlers.map((fn) => fn())).toEqual(__);
+  });
+
   test('a counter that remembers its count between calls', () => {
     function createCounter() {
       let count = 0;
